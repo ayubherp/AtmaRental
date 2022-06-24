@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable
+            name="itemData"
+            type="com.ayubherpracoyo.atmarental.model.Mobil"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/dialog_layout"
+        >
+
+        <ImageView
+            android:id="@+id/imageDialog"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="40dp"
+            android:src="@{itemData.foto_mobil}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nama"
+            app:layout_constraintTop_toBottomOf="@+id/imageDialog"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            />
+        <TextView
+            android:id="@+id/nama_mobil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{itemData.nama_mobil}"
+            android:hint="Nama Mobil"
+            app:layout_constraintTop_toBottomOf="@+id/nama"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/tipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tipe"
+            app:layout_constraintTop_toBottomOf="@+id/nama_mobil"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            />
+        <TextView
+            android:id="@+id/tipe_mobil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{itemData.tipe_mobil}"
+            android:hint="Tipe Mobil"
+            app:layout_constraintTop_toBottomOf="@+id/tipe"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/harga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/harga_sewa_hari"
+            app:layout_constraintTop_toBottomOf="@+id/tipe_mobil"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            />
+
+        <TextView
+            android:id="@+id/hargaSewa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rp.999999"
+            android:text="@{String.valueOf(itemData.harga_sewa_per_hari)}"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/harga"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/transmisi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transmisi"
+            app:layout_constraintTop_toBottomOf="@+id/hargaSewa"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            />
+        <TextView
+            android:id="@+id/transmisi_mobil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{itemData.jenis_transmisi}"
+            android:hint="Automatic/Manual"
+            app:layout_constraintTop_toBottomOf="@+id/transmisi"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/bahan_bakar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bahan Bakar"
+            app:layout_constraintTop_toBottomOf="@+id/transmisi_mobil"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            />
+        <TextView
+            android:id="@+id/bahan_bakar_mobil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{itemData.jenis_bahan_bakar}"
+            android:hint="Bensin/Solar"
+            app:layout_constraintTop_toBottomOf="@+id/bahan_bakar"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/fasilitas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fasilitas"
+            app:layout_constraintTop_toBottomOf="@+id/bahan_bakar_mobil"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            />
+        <TextView
+            android:id="@+id/fasilitas_mobil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
+            android:text="@{itemData.fasilitas}"
+            android:hint="HD-Audio, AC, Android-TV, Turbo-Engine"
+            app:layout_constraintTop_toBottomOf="@+id/fasilitas"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            app:layout_constraintTop_toBottomOf="@+id/fasilitas_mobil"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            />
+        <TextView
+            android:id="@+id/statusMobil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
+            android:text="@{itemData.status}"
+            android:hint="Tersedia/Tidak Tersedia"
+            app:layout_constraintTop_toBottomOf="@+id/status"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="36dp"
+            android:text="SEWA MOBIL"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/teal_700"
+            app:layout_constraintTop_toBottomOf="@+id/statusMobil"
+            android:textAlignment="center"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

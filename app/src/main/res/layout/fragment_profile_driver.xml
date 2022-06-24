@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="driver"
+            type="com.ayubherpracoyo.atmarental.model.Driver"/>
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="64dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fragment_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.profile.">
+
+            <TextView
+                android:id="@+id/txtYour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="36dp"
+                android:text="@string/profile"
+                android:textAlignment="center"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <ImageView
+                android:id="@+id/imgDriver"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                android:src="@{driver.link_foto}"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtYour"
+                />
+            <TextView
+                android:id="@+id/id"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ID Driver"
+                app:layout_constraintTop_toBottomOf="@+id/imgDriver"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:id="@+id/idDriver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{driver.id}"
+                android:hint="ID Driver"
+                app:layout_constraintTop_toBottomOf="@+id/id"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/label_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Nama Lengkap"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/idDriver"
+                tools:layout_editor_absoluteX="-16dp" />
+
+            <TextView
+                android:id="@+id/namaLengkap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:text="@{driver.nama_driver}"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/label_name"
+                tools:layout_editor_absoluteX="-16dp" />
+
+            <TextView
+                android:id="@+id/label_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/email"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/namaLengkap"
+                tools:layout_editor_absoluteX="-16dp" />
+
+            <TextView
+                android:id="@+id/emailDriver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                android:text="@{driver.email_driver}"
+                android:textAlignment="center"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/label_email"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/jenisKelamin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/jenis_kelamin"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/emailDriver"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/jenisKelaminDriver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{driver.gender_driver}"
+                android:hint="@string/jenis_kelamin"
+                app:layout_constraintTop_toBottomOf="@+id/jenisKelamin"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/noTelepon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/nomor_telepon"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/jenisKelaminDriver"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/noTeleponDriver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{driver.no_telepon_driver}"
+                android:hint="@string/nomor_telepon"
+                app:layout_constraintTop_toBottomOf="@+id/noTelepon"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/alamat"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/noTeleponDriver"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/alamatDriver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{driver.alamat_driver}"
+                android:hint="@string/alamat"
+                app:layout_constraintTop_toBottomOf="@+id/alamat"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/tglLahir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/tanggal_lahir"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/alamatDriver"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/tglLahirDriver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{driver.tgl_lahir}"
+                android:hint="@string/tanggal_lahir"
+                app:layout_constraintTop_toBottomOf="@+id/tglLahir"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/bahasa"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bahasa"
+                app:layout_constraintTop_toBottomOf="@id/tglLahirDriver"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:id="@+id/bahasaDriver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{driver.bahasa_driver}"
+                android:hint="@string/bahasa"
+                app:layout_constraintTop_toBottomOf="@id/bahasa"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/jumlah"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/jumlah_transaksi"
+                app:layout_constraintTop_toBottomOf="@id/bahasaDriver"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:id="@+id/jumlahDriver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(driver.jumlah_transaksi_driver)}"
+                android:hint="@string/jumlah_transaksi"
+                app:layout_constraintTop_toBottomOf="@+id/jumlah"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rating"
+                app:layout_constraintTop_toBottomOf="@id/jumlahDriver"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:id="@+id/ratingDriver"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(driver.rating_driver)}"
+                android:hint="@string/rating"
+                app:layout_constraintTop_toBottomOf="@+id/rating"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <Button
+                android:id="@+id/btnEdit"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="80dp"
+                android:text="Edit Profile"
+                android:textSize="16sp"
+                android:backgroundTint="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/ratingDriver"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

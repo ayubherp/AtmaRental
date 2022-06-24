@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="data"
+            type="com.ayubherpracoyo.atmarental.model.Mobil"/>
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".TransaksiActivity">
+
+            <TextView
+                android:id="@+id/txtTransaksi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="36dp"
+                android:text="Transaksi"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:id="@+id/nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama"
+                app:layout_constraintTop_toBottomOf="@+id/txtTransaksi"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:layout_marginTop="24dp"
+                />
+            <TextView
+                android:id="@+id/nama_mobil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{data.nama_mobil}"
+                android:hint="Nama Mobil"
+                app:layout_constraintTop_toBottomOf="@+id/nama"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/tipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipe"
+                app:layout_constraintTop_toBottomOf="@+id/nama_mobil"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                />
+            <TextView
+                android:id="@+id/tipe_mobil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{data.tipe_mobil}"
+                android:hint="Tipe Mobil"
+                app:layout_constraintTop_toBottomOf="@+id/tipe"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/harga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/harga_sewa_hari"
+                app:layout_constraintTop_toBottomOf="@+id/tipe_mobil"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:id="@+id/hargaSewa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Rp.999999"
+                android:text="@{String.valueOf(data.harga_sewa_per_hari)}"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/harga"
+                tools:layout_editor_absoluteX="0dp"
+                />
+
+            <TextView
+                android:id="@+id/noTransaksi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nomor_transaksi"
+                app:layout_constraintTop_toBottomOf="@+id/hargaSewa"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/txtNoTransaksi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="-"
+                android:text="-"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/noTransaksi"
+                tools:layout_editor_absoluteX="0dp"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/etPromo"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:autofillHints="Kode Promo"
+                android:hint="nb: Promo tidak bisa diedit"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNoTransaksi" />
+
+            <EditText
+                android:id="@+id/txtPromo"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:autofillHints="Kode Promo"
+                android:hint="kode promo (opsional)"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etPromo" />
+
+            <EditText
+                android:id="@+id/etTanggal"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:autofillHints="Tanggal"
+                android:hint="waktu mulai sewa"
+                android:inputType="number"
+                android:enabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPromo" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTanggal"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Pilih waktu (klik disini)"
+                android:textColor="#1F45FC"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etTanggal" />
+
+            <EditText
+                android:id="@+id/etHari"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:autofillHints="jumlah hari"
+                android:hint="jumlah hari sewa"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnTanggal" />
+
+            <RadioGroup
+                android:id="@+id/radio_metode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etHari"
+                android:layout_marginTop="24dp"
+                >
+
+                <TextView
+                    android:id="@+id/header_metode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Metode Pembayaran :"
+                    />
+                <RadioButton
+                    android:id="@+id/txtTransfer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Transfer"
+                    android:onClick="checkButtonPay"
+                    />
+                <RadioButton
+                    android:id="@+id/txtCash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cash"
+                    android:onClick="checkButtonPay"
+                    android:checked="true"
+                    />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radio_driver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radio_metode"
+                android:layout_marginTop="24dp"
+                >
+
+                <TextView
+                    android:id="@+id/header_driver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Memakai Driver:"
+                    />
+
+                <RadioButton
+                    android:id="@+id/txtYa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ya"
+                    android:onClick="checkButtonDriver"
+                    />
+                <RadioButton
+                    android:id="@+id/txtTidak"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tidak"
+                    android:onClick="checkButtonDriver"
+                    android:checked="true"
+                    />
+            </RadioGroup>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radio_driver">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancel"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="24dp"
+                    android:backgroundTint="#E5E4E2"
+                    android:text="Cancel"
+                    android:textColor="#000000"
+                    app:layout_constraintEnd_toStartOf="@+id/btnLogin"
+                    app:layout_constraintStart_toEndOf="@+id/linearLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/radio_driver" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSewa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#00008B"
+                    android:text="Sewa"
+                    android:layout_margin="24dp"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/btn_cancel"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/btn_cancel" />
+            </LinearLayout>
+
+
+            <include
+                android:id="@+id/loading_layout"
+                layout="@layout/layout_loading"
+                android:visibility="gone" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>
